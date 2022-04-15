@@ -1,0 +1,20 @@
+<template>
+    <lightning-spinner
+        if:false={hasData}
+        class="slds-is-relative slds-align_absolute-center slds-m-around_large"
+        alternative-text="Loading information..."
+        size="medium"
+        variant="brand">
+    </lightning-spinner>    
+    <template if:true={hasData}> 
+        <lightning-card title={title}>
+            <lightning-datatable
+                if:true={consumtiontDataTable}
+                key-field="id"
+                hide-checkbox-column
+                data={consumtiontDataTable}
+                columns={columns}>
+            </lightning-datatable>
+        </lightning-card>
+    </template>
+</template>

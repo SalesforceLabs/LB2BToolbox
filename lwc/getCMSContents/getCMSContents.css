@@ -1,0 +1,8 @@
+lightning-carousel{
+    display:flex !important;
+    color:red;
+}
+
+.slds-carousel__image{
+    max-height:500px!important;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Cross Sell</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="crossSell_Title" type="String" label="Title" description="Enter CrossSell Component Title" default="Product Recommendations" />
+            <property name="crossSell_AddToCart" type="String" label="Add To Cart Button Label" description="Enter AddToCart Button Text" default="Add to Cart" />
+            <property name="crossSell_MoreInformation" type="String" label="'More Information' Button Label" description="Enter More Information Button Text" default="More Information" />
+            <property name="displayDescription" type="Boolean" label="Display Product Description" description="Activate  it  to  display  Description" default="True" />
+            <property name="crossSell_Description" type="String" label="Description Label" description="Enter value for Description" default="Description" />
+            <property name="recordId" type="String" label="Record Id" description="Automatically bind the page's record id to the component variable" default="{!recordId}" />
+            <property name="effectiveAccountId" type="String" label="Effective Account Id" description="The ID of the account under which the user is acting (BETA)" default="{!CurrentUser.effectiveAccountId}" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

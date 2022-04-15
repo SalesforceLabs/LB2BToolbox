@@ -1,0 +1,15 @@
+<template>
+    <template if:true={recordList}>
+            <lightning-carousel disable-auto-refresh disable-auto-scroll>
+                <template for:each={recordList} for:item="record">
+                    <lightning-carousel-image key={record}
+                        src={record.contentNodes.MainPicture.url}
+                        header={record.contentNodes.Title.value}
+                        description={record.contentNodes.Description.value}
+                        alternative-text={record.contentNodes.GoBeyond.value}
+                        href={record.contentNodes.RedirectURL.value}>
+                    </lightning-carousel-image>
+                </template>
+            </lightning-carousel>
+    </template>
+</template>

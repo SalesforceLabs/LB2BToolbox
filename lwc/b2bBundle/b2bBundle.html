@@ -1,0 +1,86 @@
+<template>
+  <template if:true={hasProducts}>
+    <div
+      class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"
+    >
+      <h1 class="slds-text-heading_medium slds-text-align_left">
+        {bundle_Title}
+      </h1>
+      <lightning-layout-item padding="around-small" size="12">
+        <lightning-layout>
+          <lightning-layout-item padding="around-small" size="4">
+            <div class="page-section page-main slds-text-align_left"></div>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="2">
+            <div class="page-section page-main slds-text-align_left">
+              {bundle_Name}
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="2">
+            <div class="page-section page-main slds-text-align_left">
+              {bundle_SKU}
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="2">
+            <div class="page-section page-main slds-text-align_left">
+              {bundle_Quantity}
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="2">
+            <div class="page-section page-main slds-text-align_left">
+              {bundle_UnitPrice}
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <template for:each={CSModifiedProducts} for:item="Product">
+        <lightning-layout key={Product.id} multiple-rows="true">
+          <lightning-layout-item padding="around-small" size="12">
+            <lightning-layout vertical-align="center">
+              <lightning-layout-item padding="around-small" size="3">
+                <figure class="slds-image slds-image--card">
+                  <a href={Product.fullUrl} class="slds-image__crop--4-by-3">
+                    <img
+                      src={Product.defaultImage.url}
+                      style="max-height: 100px"
+                      alt="Description of the image"
+                    />
+                  </a>
+                </figure>
+              </lightning-layout-item>
+              <lightning-layout-item padding="around-small" size="3">
+                <div class="page-section page-main slds-text-align_left">
+                  <a href={Product.fullUrl}>
+                    <h1 class="slds-text-heading_medium">
+                      {Product.fields.Name}
+                    </h1>
+                  </a>
+                </div>
+              </lightning-layout-item>
+              <lightning-layout-item padding="around-small" size="2">
+                <div class="page-section page-main slds-text-align_left">
+                  {Product.fields.StockKeepingUnit}
+                </div>
+              </lightning-layout-item>
+              <lightning-layout-item padding="around-small" size="2">
+                <div class="page-section page-main slds-text-align_left">
+                  {Product.itemQuantity}
+                </div>
+              </lightning-layout-item>
+              <lightning-layout-item padding="around-small" size="2">
+                <div class="page-section page-main slds-text-align_left">
+                  <lightning-formatted-number
+                    currency-code={Product.currency}
+                    format-style="currency"
+                    value={Product.unitPrice}
+                  >
+                  </lightning-formatted-number>
+                </div>
+              </lightning-layout-item>
+            </lightning-layout>
+          </lightning-layout-item>
+        </lightning-layout>
+      </template>
+    </div>
+  </template>
+</template>

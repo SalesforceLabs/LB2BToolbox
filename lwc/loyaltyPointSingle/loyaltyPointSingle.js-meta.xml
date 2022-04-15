@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Loyalty Points Single</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="reward_Title" type="String" label="Reward Title" description="Enter the reward point Title" default="Your Reward Points"/>
+            <property name="reward_FirstPart" type="String" label="First Reward Part" description="Enter the string before the nb of points" default="You have"/>
+            <property name="reward_LastPart" type="String" label="Last Reward Part" description="Enter the string after the nb of points" default="Reward Points."/>
+            <property name="background_image" type="String" label="Backgroud Image" description="Enter the URL of the background Image" default="https://i.imgur.com/jif91VD.jpg"/>
+            <property name="backgroundPointColor" type="Color" label="Points and Stars Color" description="Enter the color of points" default="rgba(255, 0, 0, 1)"/>
+            <property name="textColor" type="Color" label="Text Color" description="Enter the text color" default="rgba(255, 0, 0, 1)"/>
+            <property name="effectiveAccountId" type="String" label="Effective Account Id" description="The ID of the account under which the user is acting" default="{!CurrentUser.effectiveAccountId}"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

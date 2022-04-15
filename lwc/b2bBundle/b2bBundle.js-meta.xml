@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Bundle Items</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="bundle_Title" type="String" label="Title" description="Enter Bundle Component Title" default="Items Included in this Bundle" />
+            <property name="bundle_Name" type="String" label="Name" description="Enter the Name Column label" default="Name" />
+            <property name="bundle_SKU" type="String" label="SKU" description="Enter the SKU Column label" default="SKU" />
+            <property name="bundle_Quantity" type="String" label="Quantity" description="Enter the Quantity Column label" default="Quantity" />
+            <property name="bundle_UnitPrice" type="String" label="Unit Price" description="Enter the Unit Price Column label" default="Unit Price" />
+            <property name="recordId" type="String" label="Record Id" description="Automatically bind the page's record id to the component variable" default="{!recordId}" />
+            <property name="effectiveAccountId" type="String" label="Effective Account Id" description="The ID of the account under which the user is acting (BETA)" default="{!CurrentUser.effectiveAccountId}" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

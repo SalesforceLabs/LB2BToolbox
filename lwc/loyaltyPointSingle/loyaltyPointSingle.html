@@ -1,0 +1,29 @@
+<template>
+  <div
+    class="comm-tile-menu__item slds-text-align_center slds-p-around_small slds-size_12-of-12"
+  >
+    <div
+      class="comm-tile-menu__item-title vertical-padding slds-text-align_center"
+      style="
+        background-color: var(--lwc-colorTextBrand);
+        font-size: var(--lwc-fontSizeLarge, 16px);
+        color: var(--lwc-colorTextInverse);
+        border-radius: 20px 20px 0px 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+      "
+    >
+      {rewardTitle}
+    </div>
+    <div
+      class="slds-align--absolute-center comm-tile-menu__item-image"
+      style={style_background}
+    >
+      <div style={styleStartsColor}>&#9733;</div>
+      <div style={styletextColor}>{rewardFirstPart}</div>
+      <div style={stylePointsColor}>&nbsp; {rewardPointValue}&nbsp;</div>
+      <div style={styletextColor}>{rewardLastPart}</div>
+      <div style={styleStartsColor}>&#9733;</div>
+    </div>
+  </div>
+</template>
